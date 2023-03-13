@@ -69,7 +69,7 @@ export default function App() {
 		localStorage.setItem('tasks', JSON.stringify(tasks));
 	}
 
-	useEff(() => {
+	useEffect(() => {
 		loadTasks();
 	}, []);
 
