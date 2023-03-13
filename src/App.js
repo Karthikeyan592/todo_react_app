@@ -28,7 +28,6 @@ export default function App() {
 		setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
 	useHotkeys([['mod+J', () => toggleColorScheme()]]);
-
 	const taskTitle = useRef('');
 	const taskSummary = useRef('');
 
@@ -52,14 +51,10 @@ export default function App() {
 
 	function deleteTask(index) {
 		const clonedTasks = [...tasks];
-
 		clonedTasks.splice(index, 1);
-
 		setTasks(clonedTasks);
-
 		saveTasks([...clonedTasks]);
 	}
-
 	function loadTasks() {
 		let loadedTasks = localStorage.getItem('tasks');
 
@@ -74,7 +69,7 @@ export default function App() {
 		localStorage.setItem('tasks', JSON.stringify(tasks));
 	}
 
-	useEffect(() => {
+	useEff(() => {
 		loadTasks();
 	}, []);
 
