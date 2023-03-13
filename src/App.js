@@ -13,7 +13,7 @@ import {
 } from '@mantine/core';
 import { useState, useRef, useEffect } from 'react';
 import { MoonStars, Sun, Trash } from 'tabler-icons-react';
-import { useColorScheme,useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 export default function App() {
 	const [tasks, setTasks] = useState([]);
