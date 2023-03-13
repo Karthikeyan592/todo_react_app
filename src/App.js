@@ -8,18 +8,12 @@ import {
 	Group,
 	Card,
 	ActionIcon,
-	Code,
+	MantineProvider,
+	ColorSchemeProvider,
 } from '@mantine/core';
 import { useState, useRef, useEffect } from 'react';
 import { MoonStars, Sun, Trash } from 'tabler-icons-react';
-
-import {
-	MantineProvider,
-	ColorSchemeProvider,
-	ColorScheme,
-} from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
-import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { useColorScheme,useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 export default function App() {
 	const [tasks, setTasks] = useState([]);
@@ -58,7 +52,7 @@ export default function App() {
 	}
 
 	function deleteTask(index) {
-		var clonedTasks = [...tasks];
+		const clonedTasks = [...tasks];
 
 		clonedTasks.splice(index, 1);
 
@@ -157,7 +151,7 @@ export default function App() {
 							tasks.map((task, index) => {
 								if (task.title) {
 									return (
-										<Card withBorder key={index} mt={'sm'}>
+										<Card withBorder key={task.id} mt={'sm'}>
 											<Group position={'apart'}>
 												<Text weight={'bold'}>{task.title}</Text>
 												<ActionIcon
